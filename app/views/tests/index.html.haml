@@ -1,0 +1,11 @@
+- provide(:title, 'Index')
+
+%h1 Tests#index
+- @test.each do |t|
+  = t.name
+  = link_to '編集', edit_test_path(t)
+  = link_to '削除', test_path(t), method: :delete
+
+= link_to '追加', new_test_path
+
+%p#hoge jQueryで赤色に変化
