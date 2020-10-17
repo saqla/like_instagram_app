@@ -1,0 +1,20 @@
+@import 'mixin';
+
+.actions {
+  @include btn-size;
+  margin: 90px auto 138px;
+  & .btn {
+    @include btn-size;
+    cursor: pointer;
+    border: none;
+    &-primary {
+      background: #ffe600;
+    }
+    &-txt {
+      color: #000;
+      @include fz-14_lh-21;
+      font-weight: 500;
+      opacity: .9;
+    }
+  }
+}

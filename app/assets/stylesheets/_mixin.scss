@@ -1,0 +1,24 @@
+@mixin fz-11_lh-16 {
+  font-size: 11px;
+  line-height: 16px;
+}
+
+@mixin fz-12_lh-18 {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@mixin fz-14_lh-21 {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+@mixin fz-16_lh-24 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin btn-size {
+  width: 343px;
+  height: 40px;
+}
