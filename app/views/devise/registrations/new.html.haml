@@ -1,26 +1,27 @@
 .container
-  %h2 Sign up
+  .topImage
+    = image_tag 'Rectangle.png', class: 'bgi'
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field
-      = f.label :account
+      = f.label :account, class: 'label-ttl'
       %br/
       = f.text_field :account, autofocus: true, class: 'text'
     .field
-      = f.label :email
+      = f.label :email, class: 'label-ttl'
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'text'
     .field
-      = f.label :password
-      - if @minimum_password_length
+      = f.label :password, class: 'label-ttl'
+      -# - if @minimum_password_length
         %em
           (#{@minimum_password_length} 文字以上で入力してください。)
       %br/
       = f.password_field :password, autocomplete: "new-password", class: 'text'
-    .field
+    -# .field
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'text'
     .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+      = f.submit "CREATE ACCOUNT", class: 'btn btn-primary btn-txt'
+  -# = render "devise/shared/links"
