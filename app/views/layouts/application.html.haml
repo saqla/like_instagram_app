@@ -8,7 +8,24 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
-    - flash.each do |message_type, message|
-      .message_type= message
+    -# %header.header
+      .statusBar
+        .timeStyle
+          = image_tag '9_41.png', class: 'time'
+        .mobileSignal
+          =image_tag 'mobileSignal.png', class: 'sgn'
+        .wifi
+          =image_tag 'Wifi.png', class: 'wifi'
+        .battery
+          =image_tag 'Battery.png', class: 'btr'
+
+      - flash.each do |message_type, message|
+        .message_type= message
+
     = yield
+
+    %footer.footer
+      .positionBar
+        = image_tag 'footerBar.png', class: 'fBar'

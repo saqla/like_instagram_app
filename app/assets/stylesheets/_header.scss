@@ -1,0 +1,34 @@
+.header {
+  & .statusBar {
+    width: 375px;
+    height: 44px;
+    position: fixed;
+    & .timeStyle {
+      width: 54px;
+      height: 21px;
+      position: absolute;
+      top: 27.27%;
+      left: 5.6%;
+      & .time {
+        position: absolute;
+        top: 24.61%;
+        left: 23.06%;
+      }
+    }
+    & .mobileSignal {
+      position: absolute;
+      top: 40.15%;
+      left: 78.31%;
+    }
+    & .wifi {
+      position: absolute;
+      top: 45%;
+      left: 84.19%;
+    }
+    & .battery {
+      position: absolute;
+      top: 39.39%;
+      left: 89.6%;
+    }
+  }
+}
