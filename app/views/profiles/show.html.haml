@@ -1,6 +1,20 @@
 .container.profilePage
   .profilePage_user
     .profilePage_user_account
-      = current_user.account
-    .profilePage_user_image
+      .back-btn
+        = image_tag 'Group.png'
+      .profilePage_user_account_name
+        = current_user.account
+    .profilePage_user_avatar
       = image_tag 'default-avatar.png'
+      -# %input#upload-img.upload-img{:accept => "image/*", :type => "file"}
+    .profilePage_user_info
+      .profilePage_user_info_posts
+        %p.count-value 44
+        %p.count-name Posts
+      .profilePage_user_info_followers
+        %p.count-value 110
+        %p.count-name Followers
+      .profilePage_user_info_following
+        %p.count-value 44
+        %p.count-name Following

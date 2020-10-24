@@ -1,8 +1,10 @@
+@import 'variables';
+
 .header {
   & .statusBar {
     width: 375px;
-    height: 44px;
-    position: fixed;
+    height: $header-ht;
+    position: relative;
     & .timeStyle {
       width: 54px;
       height: 21px;

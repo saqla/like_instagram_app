@@ -13,4 +13,23 @@
 #
 class Profile < ApplicationRecord
   belongs_to :user
+  has_one_attached :avatar
+
+  def update
+    @profile = current_user.prepare_profile
+    @profile.assign_attributes(profile_params)
+    if @profile.save
+      redirect_to profile_path
+    else
+      render :show
+    end
+  end
+
+  private
+  def profile_params
+    params.require(:profile).permit(
+      :account,
+      :avatar,
+    )
+  end
 end

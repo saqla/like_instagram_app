@@ -10,16 +10,26 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
-    -# %header.header
+    %header.header
       .statusBar
-        .timeStyle
-          = image_tag '9_41.png', class: 'time'
-        .mobileSignal
-          =image_tag 'mobileSignal.png', class: 'sgn'
-        .wifi
-          =image_tag 'Wifi.png', class: 'wifi'
-        .battery
-          =image_tag 'Battery.png', class: 'btr'
+        - if user_signed_in?
+          .timeStyle
+            = image_tag 'bk_9_41.png', class: 'time'
+          .mobileSignal
+            =image_tag 'bk_MobileSignal.png', class: 'sgn'
+          .wifi
+            =image_tag 'bk_Wifi.png', class: 'wifi'
+          .battery
+            =image_tag 'bk_Battery.png', class: 'btr'
+        - else
+          .timeStyle
+            = image_tag 'wt_9_41.png', class: 'time'
+          .mobileSignal
+            =image_tag 'wt_MobileSignal.png', class: 'sgn'
+          .wifi
+            =image_tag 'wt_Wifi.png', class: 'wifi'
+          .battery
+            =image_tag 'wt_Battery.png', class: 'btr'
 
       - flash.each do |message_type, message|
         .message_type= message

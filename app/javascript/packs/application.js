@@ -4,21 +4,51 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 
 import $ from 'jquery'
+import axios from 'axios'
 
 import 'src/js/sample.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('aaaaaa')
   $('.test-title').on('click', () => {
-    window.alert('CLICKED')
+    axios.get('/')
+      .then((response) => {
+        console.log(response)
+      })
   })
 })
+
+$(document).ready(function(){
+  $("#upload-img").change(function(){
+    var formData = new FormData();
+    formData.append("image", $("#upload-img")[0].files[0]);
+    $.ajax({url: 'profile_url',
+            type: 'PUT',
+            processData: false,
+            contentType: false,
+            dataType : 'json',
+            data: formData
+    });
+  });
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   $('.btn-axios').on('click', evt => {
+//       console.log('axios')
+//       chooseFile().then(f => {
+//         const body = new FormData
+//         body.append('img', f)
+//         body.append('foo', 'fuga')
+//         axios.post(profile, body).then((resp) => {
+//           result.innerHTML = resp.data
+//         })
+//       })
+//   })
+// })
 
 // jqueryボタンクリック
 // var btn1 = document.getElementById('btnJquery')
