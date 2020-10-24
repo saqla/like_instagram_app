@@ -1,0 +1,15 @@
+.footer {
+  & .positionBar {
+    width: 375px;
+    height: 34px;
+    position: absolute;
+    top: 778px;
+    left: 0;
+    & .fBar {
+      position: absolute;
+      top: 58.82%;
+      left: 32.27%;
+      border-radius: 100px;
+    }
+  }
+}

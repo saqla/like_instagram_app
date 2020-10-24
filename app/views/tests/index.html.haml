@@ -1,6 +1,6 @@
 - provide(:title, 'Index')
 
-%h1 Tests#index
+%h1.test-title Tests#index
 - @test.each do |t|
   = t.name
   = link_to '編集', edit_test_path(t)
@@ -9,3 +9,8 @@
 = link_to '追加', new_test_path
 
 %p#hoge jQueryで赤色に変化
+%br
+%hr
+%br
+%p
+  %button.btn-axios axios

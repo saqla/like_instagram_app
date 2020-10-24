@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'mixin';
+
+.profilePage {
+  &_user {
+    &_account {
+      height: 24px;
+      display: flex;
+      margin-top: 2px;
+      margin-left: 16px;
+      margin-right: 33px;
+      & .back-btn {
+        margin: auto 0;
+        & img {
+          width: 17px;
+          height: 12px;
+        }
+      }
+      &_name {
+        @include fz-16_lh-24;
+        font-weight: 500;
+        margin: 0 auto;
+      }
+    }
+    &_avatar {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto;
+      margin-top: 58px;
+      & img {
+        width: 84px;
+        height: 84px;
+      }
+    }
+    &_info {
+      height: 47px;
+      width: 241px;
+      margin: 0 auto;
+      margin-top: 43px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
