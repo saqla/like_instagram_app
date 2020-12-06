@@ -1,44 +1,104 @@
-@import 'variables';
-@import 'mixin';
+@import "variables";
+@import "mixin";
 
 .profilePage {
+  position: absolute;
+  top: 46px;
+  left: 16px;
   &_user {
+    width: 215px;
+    height: 24px;
+    & .back-btn {
+      position: absolute;
+      left: 16px;
+      & img {
+        width: 17px;
+        height: 12px;
+      }
+    }
     &_account {
       height: 24px;
-      display: flex;
-      margin-top: 2px;
-      margin-left: 16px;
-      margin-right: 33px;
-      & .back-btn {
-        margin: auto 0;
-        & img {
-          width: 17px;
-          height: 12px;
-        }
-      }
-      &_name {
-        @include fz-16_lh-24;
-        font-weight: 500;
-        margin: 0 auto;
-      }
+      position: absolute;
+      left: 143px;
+      @include fz-16_lh-24;
+      font-weight: 500;
     }
-    &_avatar {
-      width: 84px;
-      height: 84px;
-      margin: 0 auto;
-      margin-top: 58px;
-      & img {
-        width: 84px;
-        height: 84px;
-      }
+  }
+  &_avatar {
+    width: 84px;
+    height: 84px;
+    position: absolute;
+    top: 102px - $top-to-prof;
+    left: 145px;
+    border: 1px solid #e91e63;
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    & img {
+      width: 90%;
+      height: 90%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
     }
-    &_info {
-      height: 47px;
-      width: 241px;
-      margin: 0 auto;
-      margin-top: 43px;
-      display: flex;
-      justify-content: space-around;
+  }
+  &_info {
+    width: 241px;
+    height: 47px;
+    position: absolute;
+    top: 229px - $top-to-prof;
+    left: $info-posts-left;
+    text-align: center;
+
+    &_posts {
+      position: absolute;
+      left: 0;
+    }
+
+    &_followers {
+      position: absolute;
+      left: 152px - $info-posts-left;
+    }
+
+    &_following {
+      position: absolute;
+      left: 249px - $info-posts-left;
+    }
+  }
+  &_images {
+    position: absolute;
+    top: 318px - $top-to-prof;
+    left: 16px - $base-from-left;
+
+    & .images-0 {
+      position: absolute;
+      top: 318px - $base-from-top;
+      left: 16px;
+    }
+    & .images-1 {
+      position: absolute;
+      top: 318px - $base-from-top;
+      left: 231px;
+    }
+    & .images-2 {
+      position: absolute;
+      top: 418px - $base-from-top;
+      left: 231px;
+    }
+    & .images-3 {
+      position: absolute;
+      top: 518px - $base-from-top;
+      left: 16px;
+    }
+    & .images-4 {
+      position: absolute;
+      top: 618px - $base-from-top;
+      left: 16px;
+    }
+    & .images-5 {
+      position: absolute;
+      top: 518px - $base-from-top;
+      left: 152px;
     }
   }
 }
