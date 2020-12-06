@@ -22,19 +22,34 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-$(document).ready(function(){
-  $("#upload-img").change(function(){
-    var formData = new FormData();
-    formData.append("image", $("#upload-img")[0].files[0]);
-    $.ajax({url: 'profile_url',
-            type: 'PUT',
-            processData: false,
-            contentType: false,
-            dataType : 'json',
-            data: formData
-    });
-  });
-});
+// $(document).ready(function(){
+//   $("#upload-img").change(function(){
+//     var formData = new FormData();
+//     formData.append("image", $("#upload-img")[0].files[0]);
+//     $.ajax({url: 'profile_url',
+//             type: 'PUT',
+//             processData: false,
+//             contentType: false,
+//             dataType : 'json',
+//             data: formData
+//     });
+//   });
+// });
+
+// 最新
+// document.addEventListener('DOMContentLoaded', () => {
+//   document.querySelector("#avatar-image").onclick = function() => {
+//     const postAvatar = async function( image: File ) => {
+//       const url = profile_path;
+//       const data = new FormData();
+//       data.append("image", image);
+//       const headers = { "content-type": "multipart/form-data" };
+//       const res = await axios.post(url, data, { headers });
+//       return res;
+//     };
+//   }
+// })
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   $('.btn-axios').on('click', evt => {
@@ -94,3 +109,78 @@ $(document).ready(function(){
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+// var btn = document.querySelector('#upload-button')
+// btn.addEventListener('click', async function() {
+// 	let upload = await uploadFile();
+
+// 	if(upload.error == 0)
+// 		alert('File uploaded successful');
+// 	else if(upload.error == 1)
+// 		alert('File uploading failed - ' + upload.message);
+// });
+
+// // async function managing upload operation
+// async function uploadFile() {
+// 	// function return value
+// 	let return_data = { error: 0, message: '' };
+
+// 	try {
+// 		// no file selected
+// 		if(document.querySelector("#file-to-upload").files.length == 0) {
+// 			throw new Error('No file selected');
+// 		}
+// 		else {
+// 			// formdata
+// 			let data = new FormData();
+// 			data.append('title', 'Sample Title');
+// 			data.append('file', document.querySelector("#file-to-upload").files[0]);
+
+// 			// send fetch along with cookies
+// 			let response = await fetch('/upload.php', {
+// 		        method: 'POST',
+// 		        credentials: 'same-origin',
+// 		        body: data
+// 		    });
+
+// 	    	// server responded with http response != 200
+// 	    	if(response.status != 200)
+// 	    		throw new Error('HTTP response code != 200');
+
+// 	    	// read json response from server
+// 	    	// success response example : {"error":0,"message":""}
+// 	    	// error response example : {"error":1,"message":"File type not allowed"}
+// 	    	let json_response = await response.json();
+// 	        if(json_response.error == 1)
+// 	           	throw new Error(json_response.message);
+// 		}
+// 	}
+// 	catch(e) {
+// 		// catch rejected Promises and Error objects
+//     	return_data = { error: 1, message: e.message };
+//     }
+
+// 	return return_data;
+// }
+
+
+// const imageFileField = document.getElementById("image_file");
+// imageFileField.addEventListener("change", event => {
+//   const files = imageFileField.files;
+//   Array.from(files).forEach(file => {
+//     fileUpload(file);
+//   });
+// });
+
+// function fileUpload(file) {
+//   Promise.resolve(file)
+//     .then(fetch("/api/upload.py", { method: "POST", body: file }))
+//     .then(showResult)
+//     .catch(showResult);
+// }
+
+// function showResult(result) {
+//   return new Promise(resolve => {
+//     console.log(result);
+//   });
+// }
